@@ -1,0 +1,74 @@
+# dependencies
+node_modules/
+.bun/
+
+# build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# rust
+target/
+Cargo.lock.bak
+
+# native artifacts (downloaded by postinstall, not committed) — keep
+# the .gitkeep placeholder so the dir survives a fresh clone, otherwise
+# `npm pack` for @mochi.js/net-rs ships an empty publish-tarball entry.
+packages/net-rs/native/*
+!packages/net-rs/native/.gitkeep
+
+# captured browser binaries (downloaded by `mochi browsers install`)
+.mochi/browsers/
+
+# worktrees harness scratch
+worktrees/
+
+# harness output
+.mochi/harness-output/
+traces/
+
+# os
+.DS_Store
+Thumbs.db
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env
+.env.local
+.env.*.local
+
+# misc
+*.tsbuildinfo
+.turbo/
+coverage/
+.nyc_output/
+
+# Astro docs site (lands in task 0240)
+docs/site/dist/
+docs/site/.astro/
+docs/site/node_modules/
+docs/site/.cache/
+
+# Internal: agent harness operating manual + per-task briefs.
+# These document orchestrator-side workflow that contributors don't need.
+# See CONTRIBUTING.md for the public contributor guide.
+AGENTS.md
+tasks/
+
+# Internal: design mockups (Claude / Cursor scaffolding) + per-tool audit
+# reports. The audit findings are summarized on the public Comparison page
+# (https://mochijs.com/docs/reference/comparison) — full reports are kept
+# locally for the maintainer's reference.
+docs/.design-reference/
+docs/audits/
